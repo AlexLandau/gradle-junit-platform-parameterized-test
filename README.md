@@ -18,4 +18,8 @@ Command lines that don't work:
 ./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod(1)"
 ./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[]"
 ./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[1]"
+# What IntelliJ tries to do when running testMethod specifically
+./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[*]"
+# What IntelliJ tries to do when rerunning the 1-parameterized test specifically
+./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[*1*]"
 ```
