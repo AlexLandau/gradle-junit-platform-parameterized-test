@@ -29,6 +29,6 @@ public class ExampleParameterizedTest {
     }
 
     @Test public void testMethod() {
-        assertEquals(1, parameter % 2);
+        assertTrue(parameter < 4);
     }
 }
