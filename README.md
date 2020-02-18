@@ -7,19 +7,19 @@ In IntelliJ 2019.3, when importing this as a Gradle project, running the launche
 Command lines that work as expected:
 
 ```
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest"
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod"
 ```
 
 Command lines that don't work:
 
 ```
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod()"
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod(1)"
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[]"
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[1]"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod()"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod(1)"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod[]"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod[1]"
 # What IntelliJ tries to do when running testMethod specifically
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[*]"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod[*]"
 # What IntelliJ tries to do when rerunning the 1-parameterized test specifically
-./gradlew test --tests="com.github.alexlandau.ExampleParameterizedTest.testMethod[*1*]"
+./gradlew test --tests="com.github.alexlandau.ExampleJUnit4Test.testMethod[*1*]"
 ```

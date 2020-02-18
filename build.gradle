@@ -44,5 +44,5 @@ test {
 task junitConsole(type: JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
     main = "org.junit.platform.console.ConsoleLauncher"
-    args '--select-method=com.github.alexlandau.ExampleParameterizedTest#testMethod'
+    args '--select-method=com.github.alexlandau.ExampleJUnit5Test#testMethod(int)'
 }
