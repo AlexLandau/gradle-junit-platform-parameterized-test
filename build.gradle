@@ -24,11 +24,25 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.1-jre'
 
-    // Use JUnit test framework
+    // JUnit 4
     testImplementation 'junit:junit:4.12'
-    testRuntime 'org.junit.vintage:junit-vintage-engine:5.6.0'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.6.0'
+
+    // JUnit 5/Jupiter
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.0"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:5.6.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.0"
+
+    // Console launcher
+    testImplementation 'org.junit.platform:junit-platform-console:1.6.0'
 }
 
 test {
     useJUnitPlatform()
+}
+
+task junitConsole(type: JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    main = "org.junit.platform.console.ConsoleLauncher"
+    args '--select-method=com.github.alexlandau.ExampleParameterizedTest#testMethod'
 }

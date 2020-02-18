@@ -13,9 +13,9 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class ExampleParameterizedTest {
+public class ExampleJUnit4Test {
     private final int parameter;
-    public ExampleParameterizedTest(int parameter) {
+    public ExampleJUnit4Test(int parameter) {
         this.parameter = parameter;
     }
 
